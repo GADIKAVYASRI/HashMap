@@ -1,0 +1,30 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int l=sc.nextInt();
+        String arr[]=new String[l];
+        HashMap<String,Integer> m=new HashMap<>();
+        for(int i=0;i<l;i++){
+            arr[i]=sc.next();
+        }
+        for(int i=0;i<arr.length;i++){
+            String n1=arr[i];
+            /*
+            Frequency count:
+            if(m.containsKey(n1)){
+                int prev=m.get(n1);
+                m.put(n1,prev+1);
+            }
+            else{
+                m.put(n1,1);
+            }
+            It can also be written as:  
+            */
+            m.put(n1,m.getOrDefault(n1,0)+1);
+        }
+        for(String k : m.keySet()){
+                System.out.println(k+" "+m.get(k));
+        }
+    }
+}
