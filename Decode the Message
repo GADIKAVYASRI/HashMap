@@ -1,0 +1,26 @@
+class Solution {
+    public String decodeMessage(String key, String message) {
+        HashMap<Character,Character> map=new HashMap<>();
+        String res="";
+        //String s="abcdefghijklmnopqrstuvwxyz";
+        int a=97;
+        for(int i=0;i<key.length();i++){
+            if(key.charAt(i)==' '|| map.containsKey(key.charAt(i))){
+                continue;
+            }
+            else{
+            map.put(key.charAt(i),(char)a);
+            a++;
+            }
+        }
+        for(int i=0;i<message.length();i++){
+            if(map.containsKey(message.charAt(i))){
+                res+=map.get(message.charAt(i));
+            }
+            else{
+                res+=" ";
+            }
+        }
+        return res;
+    }
+}
