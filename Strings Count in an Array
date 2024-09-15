@@ -21,7 +21,7 @@ class HelloWorld {
             }
             It can also be written as:  
             */
-            m.put(n1,m.getOrDefault(map.get(n1),0)+1);
+            m.put(n1,m.getOrDefault(m.get(n1),0)+1);
         }
         for(String k : m.keySet()){
                 System.out.println(k+" "+m.get(k));
